@@ -185,7 +185,7 @@ en cuenta que al realizarlo fuera de la aplicación no se crean las credenciales
 Estando en el área de **App details** o **Detalles de la aplicación** deberá dar clic en el menú de despliegue del
 recurso implementado, luego seleccionará la opción **Open dashboard**.
 
-<img width="434" alt="27" src="https://user-images.githubusercontent.com/50923637/59038349-886e8000-8838-11e9-87f5-954f0a028c8c.png">
+<img width="600" alt="27" src="https://user-images.githubusercontent.com/50923637/59038349-886e8000-8838-11e9-87f5-954f0a028c8c.png">
 
 Luego de esto se abre una ventana emergente la cual lo ubicará por defecto en la opción **Manage** o **Gestionar**
 en la cual usted podrá verificar que el estado de los tasks este completado.
