@@ -70,6 +70,8 @@ la organización, el espacio y el dominio donde va a estar asignado.
 
 `Nota: Tenga en cuenta las condiciones de latencia según su ubicación para así poder seleccionar
 la opción de región óptima para usted.`
+
+
 Luego vera la ventana anteriormente mencionada, en ella seleccionara la memoria deseada, el número de instancias
 deseadas, la región, la organización, espacio y el dominio, en esta ventana luego de seleccionar lo deseado
 da clic en **Next**.
@@ -111,3 +113,32 @@ Luego da clic en el **menú de hamburguesa** para acceder al **Resource list** o
 Luego deberá dar clic en la opción **Resource list** o **lista de recursos**.
 
 <img width="600" alt="17" src="https://user-images.githubusercontent.com/50923637/58990184-f3717580-87aa-11e9-8d86-ba9358b28879.png">
+
+Después se da clic para desplegar el menú de **Apps** existente en el **resource list** o **lista de recursos**, deberá
+buscar la aplicación que creo dentro del menos de aplicaciones que se despliega que fueron anteriormente creadas
+y debe dar clic en la aplicación en la cual está trabajando en el momento.
+
+<img width="600" alt="18" src="https://user-images.githubusercontent.com/50923637/59036108-4ba08a00-8834-11e9-9fce-55fd71808670.png">
+
+Luego de dar clic en la aplicación, será redireccionado a la siguiente ventana en la cual va a dar clic en la opción
+**Add resource** o **Añadir recurso**.
+
+<img width="600" alt="19" src="https://user-images.githubusercontent.com/50923637/59036111-4d6a4d80-8834-11e9-9249-b0defa08852a.png">
+
+Luego se ve una ventana en la cual seleccionará el recurso que desea agregar a la aplicación en este caso dará
+clic en la opción **Databases**, luego de ver que esta seleccionada da clic en **Next** o **Siguiente**.
+
+<img width="600" alt="20" src="https://user-images.githubusercontent.com/50923637/59036117-4e9b7a80-8834-11e9-9d56-57d255e9fe6c.png">
+
+Luego en la ventana aparece el recurso que desea agregar, deberá buscar la opción **Compose for Mongo Db**,
+seleccionará esta opción y da clic en **Next** o **Siguiente**.
+
+<img width="600" alt="21" src="https://user-images.githubusercontent.com/50923637/59036120-50653e00-8834-11e9-9baa-786bf6d59af8.png">
+
+Después de eso se realiza el despliegue, en la ventana las opciones deben seleccionar la región, está ya seleccionado
+el resource group o grupo de recursos anteriormente asignado luego de eso deberá dar clic en la opción **Create**
+o **Crear**.
+
+`Nota: Para poder agregar un recurso a una aplicación se debe tener en cuenta que la cuenta
+debe contar con permisos o debe ser una cuenta paga es decir con recursos para poder realizar
+esta acción de provisionar recursos.`
