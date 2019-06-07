@@ -351,215 +351,215 @@ de películas en una página Web con la ayuda de las herramientas que proporcion
 ### Mongo.js
 
 ```
-1
-2 */
-3 Licensed to the Apache Software Foundation (ASF ) under one
-4 or more contributor license agreements . See the NOTICE file
-5 distributed with this work for additional information
-6 regarding copyright ownership . The ASF licenses this file
-7 to you under the Apache License , Version 2.0 (the
-8 " License "); you may not use this file except in compliance
-9 with the License . You may obtain a copy of the License at
-10 http :// www . apache .org / licenses / LICENSE -2.0
-11 Unless required by applicable law or agreed to in writing ,
-12 software distributed under the License is distributed on an
-13 "AS IS" BASIS , WITHOUT WARRANTIES OR CONDITIONS OF ANY
-14 KIND , either express or implied . See the License for the
-15 specific language governing permissions and limitations
-16 under the License .
-17 */
-18
-19 ’use strict ’;
-20
-21 const mongoose = require (’mongoose ’);
-22 const bodyParser = require (’body - parser ’);
-23 const session = require (’express - session ’);
-24 const MongoStore = require (’connect - mongo ’)( session );
-25
-26 // Sample Model
-27 const Comment = require (’../ model / movies ’);
-28
-29 // user set constiables
-30 const mongoURL = process .env . MONGO_URL || ’localhost ’;
-31 const mongoUser = process .env . MONGO_USER || ’’;
-32 const mongoPass = process .env . MONGO_PASS || ’’;
-33 const mongoDBName = process .env . MONGO_DB_NAME || ’comments ’;
-34
-35 module . exports = function (app ){
-36 // set up other middleware
-37 app .use ( bodyParser . urlencoded ({ extended : true }));
-38 app .use ( bodyParser . json ());
-39
-40 const options = {
-41 useMongoClient : true ,
-42 ssl : true ,
-43 sslValidate : false ,
-44 poolSize : 1,
-45 reconnectTries : 1
-46 };
-47
-48 // connect to the MongoDB
-49 let mongoConnect = ’mongodb :// localhost :27017 ’;
-50 if ( mongoURL !== ’’ && mongoUser !== ’’ && mongoPass != ’’) {
-51 mongoConnect = ‘mongodb ://${ mongoUser }:${ mongoPass }${ mongoURL }/${ mongoDBName }‘;
-52 } else if ( mongoURL !== ’’) {
-53 mongoConnect = ‘mongodb ://${ mongoURL }/${ mongoDBName }‘;
-54 }
-55
-56 mongoose . Promise = global . Promise ;
-57 mongoose . connect ( mongoConnect , options )
-58 . catch (( err ) => {
-59 if (err ) console . error (err );
-60 });
-61
-62 var db = mongoose . connection ;
-63 db.on(’error ’, ( error ) => {
-64 console . error ( error );
-65 });
-66
-67 var sess = {
-68 store : new MongoStore ({ mongooseConnection : mongoose . connection }) ,
-69 name : ’mean example ’,
-70 secret : ’ninpocho ’,
-71 resave : false ,
-72 saveUnitialized : true ,
-31
-73 cookie : {}
-74 };
-75
-76 app .use ( session ( sess ));
-77
-78 console . info (’Connection established with mongodb ’);
-79 console . info (‘ Connection details : ${ mongoConnect }‘);
-80
-81 };
+
+ */
+ Licensed to the Apache Software Foundation (ASF ) under one
+ or more contributor license agreements . See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership . The ASF licenses this file
+ to you under the Apache License , Version 2.0 (the
+ " License "); you may not use this file except in compliance
+ with the License . You may obtain a copy of the License at
+ http :// www . apache .org / licenses / LICENSE -2.0
+ Unless required by applicable law or agreed to in writing ,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS , WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND , either express or implied . See the License for the
+ specific language governing permissions and limitations
+ under the License .
+ */
+
+ ’use strict ’;
+
+ const mongoose = require (’mongoose ’);
+ const bodyParser = require (’body - parser ’);
+ const session = require (’express - session ’);
+ const MongoStore = require (’connect - mongo ’)( session );
+
+ // Sample Model
+ const Comment = require (’../ model / movies ’);
+
+ // user set constiables
+ const mongoURL = process .env . MONGO_URL || ’localhost ’;
+ const mongoUser = process .env . MONGO_USER || ’’;
+ const mongoPass = process .env . MONGO_PASS || ’’;
+ const mongoDBName = process .env . MONGO_DB_NAME || ’comments ’;
+
+ module . exports = function (app ){
+ // set up other middleware
+ app .use ( bodyParser . urlencoded ({ extended : true }));
+ app .use ( bodyParser . json ());
+
+ const options = {
+ useMongoClient : true ,
+ ssl : true ,
+ sslValidate : false ,
+ poolSize : 1,
+ reconnectTries : 1
+ };
+
+ // connect to the MongoDB
+ let mongoConnect = ’mongodb :// localhost :27017 ’;
+ if ( mongoURL !== ’’ && mongoUser !== ’’ && mongoPass != ’’) {
+ mongoConnect = ‘mongodb ://${ mongoUser }:${ mongoPass }${ mongoURL }/${ mongoDBName }‘;
+ } else if ( mongoURL !== ’’) {
+ mongoConnect = ‘mongodb ://${ mongoURL }/${ mongoDBName }‘;
+ }
+
+ mongoose . Promise = global . Promise ;
+ mongoose . connect ( mongoConnect , options )
+ . catch (( err ) => {
+ if (err ) console . error (err );
+ });
+
+ var db = mongoose . connection ;
+ db.on(’error ’, ( error ) => {
+ console . error ( error );
+ });
+
+ var sess = {
+ store : new MongoStore ({ mongooseConnection : mongoose . connection }) ,
+ name : ’mean example ’,
+ secret : ’ninpocho ’,
+ resave : false ,
+ saveUnitialized : true ,
+
+ cookie : {}
+ };
+
+ app .use ( session ( sess ));
+
+ console . info (’Connection established with mongodb ’);
+ console . info (‘ Connection details : ${ mongoConnect }‘);
+
+ };
 
 ```
 
 ### App.js
 
 ```
-1
-2 */
-3 ľ Copyright IBM Corp . 2018
-4 Licensed under the Apache License , Version 2.0 (the " License ");
-5 you may not use this file except in compliance with the License .
-6 You may obtain a copy of the License at
-7 http :// www . apache .org / licenses / LICENSE -2.0
-8 Unless required by applicable law or agreed to in writing , software
-9 distributed under the License is distributed on an "AS IS" BASIS ,
-10 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND , either express or implied .
-11 See the License for the specific language governing permissions and
-12 limitations under the License .
-13 */
-14
-15 require (’./ default .css ’);
-16
-17 angular . module (’App ’, [’ui. router ’, ’MainView ’])
-18 . config ( function ( $stateProvider , $urlRouterProvider ) {
-19 ’ngInject ’;
-20 $stateProvider . state (’MainState ’, {
-21 url : ’’,
-22 templateUrl : ’/ templates / component . html ’,
-23 controller : ’MainCtrl ’
-24 });
-25 $urlRouterProvider . otherwise (’/’);
-26 });
-27
-28 angular . module (’MainView ’, [])
-29 . controller (’MainCtrl ’, [’$scope ’, ’$http ’, function ($scope , $http ) {
-30
-31 $scope .id = "" ;
-32 $scope . title = "" ;
-33 $scope . director = "" ;
-34 $scope . description = "" ;
-35 $scope . year = "" ;
-36
-37 $scope . data = "" ;
-38
-39 $scope .add = function () {
-40
-41 $http ({
-42 method : ’POST ’,
-43 url : ’/api / movies /’,
-44 data : {
-45 ’title ’: $scope .title ,
-46 ’director ’: $scope . director ,
-47 ’description ’: $scope . description ,
-48 ’year ’: $scope . year
-49 }
-50 })
-51 . then ( function ( response ) {
-52 $scope .get () ;
-53
-54 }, function ( error ) {
-55 console . error (’get movies failed : %s’, error . message ) ;
-56 }) ;
-57
-58 } ;
-59
-60 $scope .get = function () {
-61
-62 $http ({
-63 method : ’GET ’,
-64 url : ’/api / movies /’
-32
-65 })
-66 . then ( function ( response ){
-67
-68 $scope . movies = response . data ;
-69 $scope . data = $scope . movies [0]. title ;
-70
-71 console . info (’get movies sussess : %s’, $scope . movies [0]. title ) ;
-72
-73 }, function ( error ) {
-74
-75 $scope . data = error . message ;
-76 console . info (’get movies failed : %s’, error . message ) ;
-77 }) ;
-78 } ;
-79
-80
-81 $scope . update = function () {
-82
-83 $http ({
-84 method : ’PUT ’,
-85 url : ’/api / movies /’ + $scope .id ,
-86 data : {
-87 ’_id ’: $scope .id ,
-88 ’title ’: $scope .title ,
-89 ’director ’: $scope . director ,
-90 ’description ’: $scope . description ,
-91 ’year ’: $scope . year
-92 }
-93 })
-94 . then ( function ( response ) {
-95 $scope .get () ;
-96
-97 }, function ( error ) {
-98 console . error (’update movies failed : %s’, error . message ) ;
-99 }) ;
-100 } ;
-101
-102
-103
-104 $scope . delete = function () {
-105
-106 $http ({
-107 method : ’DELETE ’,
-108 url : ’/api / movies /’+ $scope .id ,
-109 data : {
-110 ’_id ’: $scope .id ,
-111 }
-112 })
-113 . then ( function ( response ) {
-114 $scope .get () ;
-115
-116 }, function ( error ) {
-117 console . error (’delete movies failed : %s’, error . message ) ;
-118 }) ;
-119 } ;
-120 }]) ;
+
+ */
+ ľ Copyright IBM Corp . 2018
+ Licensed under the Apache License , Version 2.0 (the " License ");
+ you may not use this file except in compliance with the License .
+ You may obtain a copy of the License at
+ http :// www . apache .org / licenses / LICENSE -2.0
+ Unless required by applicable law or agreed to in writing , software
+ distributed under the License is distributed on an "AS IS" BASIS ,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND , either express or implied .
+ See the License for the specific language governing permissions and
+ limitations under the License .
+ */
+
+ require (’./ default .css ’);
+
+ angular . module (’App ’, [’ui. router ’, ’MainView ’])
+ . config ( function ( $stateProvider , $urlRouterProvider ) {
+ ’ngInject ’;
+ $stateProvider . state (’MainState ’, {
+ url : ’’,
+ templateUrl : ’/ templates / component . html ’,
+ controller : ’MainCtrl ’
+ });
+ $urlRouterProvider . otherwise (’/’);
+ });
+
+ angular . module (’MainView ’, [])
+ . controller (’MainCtrl ’, [’$scope ’, ’$http ’, function ($scope , $http ) {
+
+ $scope .id = "" ;
+ $scope . title = "" ;
+ $scope . director = "" ;
+ $scope . description = "" ;
+ $scope . year = "" ;
+
+ $scope . data = "" ;
+
+ $scope .add = function () {
+
+ $http ({
+ method : ’POST ’,
+ url : ’/api / movies /’,
+ data : {
+ ’title ’: $scope .title ,
+ ’director ’: $scope . director ,
+ ’description ’: $scope . description ,
+ ’year ’: $scope . year
+ }
+ })
+ . then ( function ( response ) {
+ $scope .get () ;
+
+ }, function ( error ) {
+ console . error (’get movies failed : %s’, error . message ) ;
+ }) ;
+
+ } ;
+
+ $scope .get = function () {
+
+ $http ({
+ method : ’GET ’,
+ url : ’/api / movies /’
+
+ })
+ . then ( function ( response ){
+
+ $scope . movies = response . data ;
+ $scope . data = $scope . movies [0]. title ;
+
+ console . info (’get movies sussess : %s’, $scope . movies [0]. title ) ;
+
+ }, function ( error ) {
+
+ $scope . data = error . message ;
+ console . info (’get movies failed : %s’, error . message ) ;
+ }) ;
+ } ;
+
+
+ $scope . update = function () {
+
+ $http ({
+ method : ’PUT ’,
+ url : ’/api / movies /’ + $scope .id ,
+ data : {
+ ’_id ’: $scope .id ,
+ ’title ’: $scope .title ,
+ ’director ’: $scope . director ,
+ ’description ’: $scope . description ,
+ ’year ’: $scope . year
+ }
+ })
+ . then ( function ( response ) {
+ $scope .get () ;
+
+ }, function ( error ) {
+ console . error (’update movies failed : %s’, error . message ) ;
+ }) ;
+ } ;
+
+
+
+ $scope . delete = function () {
+
+ $http ({
+ method : ’DELETE ’,
+ url : ’/api / movies /’+ $scope .id ,
+ data : {
+ ’_id ’: $scope .id ,
+ }
+ })
+ . then ( function ( response ) {
+ $scope .get () ;
+
+ }, function ( error ) {
+ console . error (’delete movies failed : %s’, error . message ) ;
+ }) ;
+ } ;
+ }]) ;
 
 ```
 
@@ -567,142 +567,142 @@ de películas en una página Web con la ayuda de las herramientas que proporcion
 
 ```
 
-1
-2 /*
-3 Licensed to the Apache Software Foundation (ASF ) under one
-4 or more contributor license agreements . See the NOTICE file
-5 distributed with this work for additional information
-6 regarding copyright ownership . The ASF licenses this file
-7 to you under the Apache License , Version 2.0 (the
-8 " License "); you may not use this file except in compliance
-9 with the License . You may obtain a copy of the License at
-10
-11 http :// www . apache .org / licenses / LICENSE -2.0
-12
-13 Unless required by applicable law or agreed to in writing ,
-14 software distributed under the License is distributed on an
-15 "AS IS" BASIS , WITHOUT WARRANTIES OR CONDITIONS OF ANY
-16 KIND , either express or implied . See the License for the
-17 specific language governing permissions and limitations
-33
-18 under the License .
-19 */
-20
-21 ’use strict ’;
-22
-23 var mongoose = require (’mongoose ’);
-24 var Schema = mongoose . Schema ;
-25
-26 var MoviesSchema = new Schema ({
-27 title : String ,
-28 description : String ,
-29 director : String ,
-30 year : String
-31 });
-32
-33 var model = mongoose . model (’Movie ’, MoviesSchema );
-34 module . exports = model ;
+
+ /*
+ Licensed to the Apache Software Foundation (ASF ) under one
+ or more contributor license agreements . See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership . The ASF licenses this file
+ to you under the Apache License , Version 2.0 (the
+ " License "); you may not use this file except in compliance
+ with the License . You may obtain a copy of the License at
+
+ http :// www . apache .org / licenses / LICENSE -2.0
+
+ Unless required by applicable law or agreed to in writing ,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS , WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND , either express or implied . See the License for the
+ specific language governing permissions and limitations
+
+ under the License .
+ */
+
+ ’use strict ’;
+
+ var mongoose = require (’mongoose ’);
+ var Schema = mongoose . Schema ;
+
+ var MoviesSchema = new Schema ({
+ title : String ,
+ description : String ,
+ director : String ,
+ year : String
+ });
+
+ var model = mongoose . model (’Movie ’, MoviesSchema );
+ module . exports = model ;
 
 ```
 
 ### Server.js
 
 ```
-1
-2 // Uncomment following to enable zipkin tracing , tailor to fit your network configuration :
-3 // var appzip = require (’ appmetrics - zipkin ’)({
-4 // host : ’localhost ’,
-5 // port : 9411 ,
-6 // serviceName :’ frontend ’
-7 // });
-89
-require (’appmetrics - dash ’). attach ();
-10 require (’appmetrics - prometheus ’). attach ();
-11 const appName = require (’./../ package ’). name ;
-12 const http = require (’http ’);
-13 const express = require (’express ’);
-14 const log4js = require (’log4js ’);
-15 const localConfig = require (’./ config / local . json ’);
-16 const path = require (’path ’);
-17
-18 // inicio
-19 // Importar Modulo Movies
-20 var Movie = require (’./ model / movies ’) ;
-21
-22
-23 const logger = log4js . getLogger ( appName );
-24 logger . level = process .env . LOG_LEVEL || ’info ’
-25 const app = express ();
-26 const server = http . createServer (app );
-27
-28 app .use ( log4js . connectLogger (logger , { level : logger . level }));
-29 const serviceManager = require (’./ services / service - manager ’);
-30 require (’./ services / index ’)( app );
-31 require (’./ routers / index ’)(app , server );
-32
-33 // Movies APIs
-34
-35 app .get ("/api / movies ", function (req , res , next ) {
-36
-37 Movie . find ( function (err , post ) {
-38 if (err ) return next (err );
-39 res . json ( post );
-40 });
-41
-42 });
-43
-44
-45 app .get ("/api / movies /: id", function (req , res , next ) {
-46
-47 Movie . findById (req . params .id , function (err , post ) {
-48 if (err ) return next (err );
-49 res . json ( post );
-50 });
-51
-52 });
-53
-54 app . post ("/api / movies ", function (req , res , next ) {
-55
-56 Movie . create (req .body , function (err , post ) {
-34
-57 if (err ) return next (err );
-58 res . json ( post );
-59 });
-60
-61 });
-62
-63 // update Movie
-64 app .put ("/api / movies /: id", function (req , res , next ) {
-65 Movie . findByIdAndUpdate (req . params .id , req .body , function (err , post ) {
-66 if (err ) return next (err );
-67 res . json ( post );
-68 });
-69 });
-70
-71 // DELETE Movie
-72
-73 app . delete ("/api / movies /: id", function (req , res , next ) {
-74 Movie . findByIdAndRemove (req . params .id , function (err , post ) {
-75 if (err ) return next (err );
-76 res . json ( post );
-77 });
-78 });
-79
-80 // final
-81
-82 const port = process .env . PORT || localConfig . port ;
-83 server . listen (port , function (){
-84 logger . info (‘ DEMOPELICULAS listening on http :// localhost :${ port }/ appmetrics -dash ‘);
-85 logger . info (‘ DEMOPELICULAS listening on http :// localhost :${ port }‘);
-86 });
-87
-88 app .use ( function (req , res , next ) {
-89 res . sendFile ( path . join ( __dirname , ’../ public ’, ’404. html ’));
-90 });
-91
-92 app .use ( function (err , req , res , next ) {
-93 res . sendFile ( path . join ( __dirname , ’../ public ’, ’500. html ’));
-94 });
-95
-96 module . exports = server ;
+
+ // Uncomment following to enable zipkin tracing , tailor to fit your network configuration :
+ // var appzip = require (’ appmetrics - zipkin ’)({
+ // host : ’localhost ’,
+ // port : 9411 ,
+ // serviceName :’ frontend ’
+ // });
+
+ require (’appmetrics - dash ’). attach ();
+ require (’appmetrics - prometheus ’). attach ();
+ const appName = require (’./../ package ’). name ;
+ const http = require (’http ’);
+ const express = require (’express ’);
+ const log4js = require (’log4js ’);
+ const localConfig = require (’./ config / local . json ’);
+ const path = require (’path ’);
+
+ // inicio
+ // Importar Modulo Movies
+ var Movie = require (’./ model / movies ’) ;
+
+
+ const logger = log4js . getLogger ( appName );
+ logger . level = process .env . LOG_LEVEL || ’info ’
+ const app = express ();
+ const server = http . createServer (app );
+
+ app .use ( log4js . connectLogger (logger , { level : logger . level }));
+ const serviceManager = require (’./ services / service - manager ’);
+ require (’./ services / index ’)( app );
+ require (’./ routers / index ’)(app , server );
+
+ // Movies APIs
+
+ app .get ("/api / movies ", function (req , res , next ) {
+
+ Movie . find ( function (err , post ) {
+ if (err ) return next (err );
+ res . json ( post );
+ });
+
+ });
+
+
+ app .get ("/api / movies /: id", function (req , res , next ) {
+
+ Movie . findById (req . params .id , function (err , post ) {
+ if (err ) return next (err );
+ res . json ( post );
+ });
+
+ });
+
+ app . post ("/api / movies ", function (req , res , next ) {
+
+ Movie . create (req .body , function (err , post ) {
+
+ if (err ) return next (err );
+ res . json ( post );
+ });
+
+ });
+
+ // update Movie
+ app .put ("/api / movies /: id", function (req , res , next ) {
+ Movie . findByIdAndUpdate (req . params .id , req .body , function (err , post ) {
+ if (err ) return next (err );
+ res . json ( post );
+ });
+ });
+
+ // DELETE Movie
+
+ app . delete ("/api / movies /: id", function (req , res , next ) {
+ Movie . findByIdAndRemove (req . params .id , function (err , post ) {
+ if (err ) return next (err );
+ res . json ( post );
+ });
+ });
+
+ // final
+
+ const port = process .env . PORT || localConfig . port ;
+ server . listen (port , function (){
+ logger . info (‘ DEMOPELICULAS listening on http :// localhost :${ port }/ appmetrics -dash ‘);
+ logger . info (‘ DEMOPELICULAS listening on http :// localhost :${ port }‘);
+ });
+
+ app .use ( function (req , res , next ) {
+ res . sendFile ( path . join ( __dirname , ’../ public ’, ’404. html ’));
+ });
+
+ app .use ( function (err , req , res , next ) {
+ res . sendFile ( path . join ( __dirname , ’../ public ’, ’500. html ’));
+ });
+
+ module . exports = server ;
 ```
