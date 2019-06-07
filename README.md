@@ -6,11 +6,11 @@ Hands On para construir aplicación utilizando el Stack MEAN en IBM Cloud
 * Creación y despliegue de la MEAN Stack App.
 * Creación base de datos y enlace con el MEAN Stack App.
 
-## 1. Introducción
+##  Introducción
 En la siguiente guía puede observar cómo se realiza la creación, el despliegue y la modificación de un Mean
 stack, con mongo Db, Express.js, Angular y node.js en IBM Cloud.
 
-## 2. Creación y despliegue MEAN Stack App
+##  Creación y despliegue MEAN Stack App
 
 Para realizar la creación del Mean stack, se dirige a la página principal de Cloud IBM en la cual pude acceder
 por medio de la siguiente **URL** https://cloud.ibm.com/login/, una vez allí va a iniciar sesión con su cuenta
