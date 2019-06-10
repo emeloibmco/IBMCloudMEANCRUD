@@ -348,6 +348,103 @@ de películas en una página Web con la ayuda de las herramientas que proporcion
 
 ## Codigos modificación Mean App
 
+```
+
+### Component.html
+
+```
+<section>
+    <header id="flex-header">
+        <div class="cloud-header"></div>
+        <h2>IBM Cloud - App MEAN</h2>
+    </header>
+    <main>
+		 <div ng-init="get()" style="display: flex;justify-content: center;">
+		 	<div style="width: 800px;">
+		    	<table>
+				<tr>
+		    		  <td  cols="12" align="right">
+		    		  <label>Id</label>
+		    		  </td>
+		    		  <td>
+		              <input ng-model="id" type="text" name="id" cols="40">
+		          	  </td>
+		        </tr>
+		    	<tr>
+		    		  <td  cols="12" align="right">
+		    		  <label>Title</label>
+		    		  </td>
+		    		  <td>
+		              <input ng-model="title" type="text" name="title" cols="40">
+		          	  </td>
+		        </tr>
+		        <tr>
+		        	  <td  cols="12" align="right">
+		        	  <label>Description</label>
+		        	  </td>
+		        	  <td>
+		              <textarea ng-model="description"  name="description" cols="80"></textarea>
+		          	  </td>
+		         </tr>
+ 				 <tr>
+		        	  <td  cols="12" align="right">
+		    		  <label>Director</label>
+		    		  </td>
+		    		  <td>		    	
+		              <input ng-model="director" type="text" name="director" cols="30">
+		              </td>
+		         </tr>
+ 				 <tr>
+		        	  <td  cols="12" align="right">
+		    		  <label>Year</label>		        
+		    		  </td>
+		    		  <td>
+		              <input ng-model="year" type="text" name="year" cols="6">
+		          	  </td>
+		         </tr>
+		         <tr>
+		         	<td></td>
+		         	<td>
+			        <button ng_click="get()" style="font-size: 14px;background-color: #e7e7e7; color: black;border: 2px solid black;">
+			        	List
+			        </button>
+		
+			        <button ng_click="add()" style="font-size: 14px;background-color: #e7e7e7; color: black;border: 2px solid black;">
+			        	Add
+			        </button>	        
+
+			        <button ng_click="update()" style="font-size: 14px;background-color: #e7e7e7; color: black;border: 2px solid black;">
+			        	Update
+			        </button>	
+			      	<button ng_click="delete()" style="font-size: 14px;background-color: #e7e7e7; color: black;border: 2px solid black;">
+			        	Delete
+			        </button>	
+			        </td>         
+		         </tr>
+		         </table>	        
+		        <table style="border:1px solid black;">
+		        <tr>
+						<th>id</th>
+						<th cols="30">title </th>
+						<th cols="50">description</th>
+						<th cols="25">director<th>
+						<th cols="6">year</th>		        
+				</tr>
+		        <tr ng-repeat="movie in movies">
+						<td>{{movie._id}}</td>
+						<td>{{movie.title}}</td>
+						<td>{{movie.description}}</td>
+						<td>{{movie.director}}</td>
+						<td>{{movie.year}}</td>
+		        </tr>
+		        </table>
+		    </div>
+		 </div>
+	</main>		 
+</section>
+
+
+
 ### Mongo.js
 
 ```
