@@ -350,6 +350,101 @@ de películas en una página Web con la ayuda de las herramientas que proporcion
 
 ---
 
+### Component.html
+
+```
+<section>
+    <header id="flex-header">
+        <div class="cloud-header"></div>
+        <h2>IBM Cloud - App MEAN</h2>
+    </header>
+    <main>
+		 <div ng-init="get()" style="display: flex;justify-content: center;">
+		 	<div style="width: 800px;">
+		    	<table>
+				<tr>
+		    		  <td  cols="12" align="right">
+		    		  <label>Id</label>
+		    		  </td>
+		    		  <td>
+		              <input ng-model="id" type="text" name="id" cols="40">
+		          	  </td>
+		        </tr>
+		    	<tr>
+		    		  <td  cols="12" align="right">
+		    		  <label>Title</label>
+		    		  </td>
+		    		  <td>
+		              <input ng-model="title" type="text" name="title" cols="40">
+		          	  </td>
+		        </tr>
+		        <tr>
+		        	  <td  cols="12" align="right">
+		        	  <label>Description</label>
+		        	  </td>
+		        	  <td>
+		              <textarea ng-model="description"  name="description" cols="80"></textarea>
+		          	  </td>
+		         </tr>
+ 				 <tr>
+		        	  <td  cols="12" align="right">
+		    		  <label>Director</label>
+		    		  </td>
+		    		  <td>		    	
+		              <input ng-model="director" type="text" name="director" cols="30">
+		              </td>
+		         </tr>
+ 				 <tr>
+		        	  <td  cols="12" align="right">
+		    		  <label>Year</label>		        
+		    		  </td>
+		    		  <td>
+		              <input ng-model="year" type="text" name="year" cols="6">
+		          	  </td>
+		         </tr>
+		         <tr>
+		         	<td></td>
+		         	<td>
+			        <button ng_click="get()" style="font-size: 14px;background-color: #e7e7e7; color: black;border: 2px solid black;">
+			        	List
+			        </button>
+		
+			        <button ng_click="add()" style="font-size: 14px;background-color: #e7e7e7; color: black;border: 2px solid black;">
+			        	Add
+			        </button>	        
+
+			        <button ng_click="update()" style="font-size: 14px;background-color: #e7e7e7; color: black;border: 2px solid black;">
+			        	Update
+			        </button>	
+			      	<button ng_click="delete()" style="font-size: 14px;background-color: #e7e7e7; color: black;border: 2px solid black;">
+			        	Delete
+			        </button>	
+			        </td>         
+		         </tr>
+		         </table>	        
+		        <table style="border:1px solid black;">
+		        <tr>
+						<th>id</th>
+						<th cols="30">title </th>
+						<th cols="50">description</th>
+						<th cols="25">director<th>
+						<th cols="6">year</th>		        
+				</tr>
+		        <tr ng-repeat="movie in movies">
+						<td>{{movie._id}}</td>
+						<td>{{movie.title}}</td>
+						<td>{{movie.description}}</td>
+						<td>{{movie.director}}</td>
+						<td>{{movie.year}}</td>
+		        </tr>
+		        </table>
+		    </div>
+		 </div>
+	</main>		 
+</section>
+
+```
+
 ### Mongo.js
 
 ```
@@ -709,56 +804,3 @@ de películas en una página Web con la ayuda de las herramientas que proporcion
  module . exports = server ;
 ```
 
-### Component.html
-
-```
-<section>
-    <header id="flex-header">
-        <div class="cloud-header"></div>
-        <h1>Congratulations!</h1>
-        <h2>You are currently running a Node.js app built for the IBM Cloud.</h2>
-    </header>
-    <main>
-        <ul>
-            <li>
-                <div class="right-arrow"></div>
-                <div>
-                    <a target="_blank" href="https://console.bluemix.net/developer/appservice/dashboard?env_id=ibm%3Ayp%3Aus-south">Visit IBM Cloud App Service</a>
-                </div>
-            </li>
-            <li>
-                <div class="right-arrow"></div>
-                <div>
-                    <a target="_blank" href="https://slack-invite-ibm-cloud-tech.mybluemix.net/">Ask questions on Slack</a>
-                </div>
-            </li>
-            <li>
-                <div class="right-arrow"></div>
-                <div>
-                    <a target="_blank" href="https://www.ibm.com/cloud/cli">Install IBM Cloud Developer Tools</a>
-                </div>
-            </li>
-            <li>
-                <div class="right-arrow"></div>
-                <div>
-                    <a target="_blank" href="https://developer.ibm.com/node">Visit Node.js Developer Center</a>
-                </div>
-            </li>
-            <li>
-                <div class="right-arrow"></div>
-                <div>
-                    <a target="_blank" href="https://developer.ibm.com/node/help">Get support for Node.js</a>
-                </div>
-            </li>
-            <li>
-                <div class="right-arrow"></div>
-                <div>
-                    <a target="_blank" href="https://developer.ibm.com/node/blogs">Subscribe to our blog</a>
-                </div>
-            </li>
-        </ul>
-    </main>
-</section>
-
-
-```
