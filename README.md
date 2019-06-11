@@ -133,7 +133,7 @@ clic en la opción **Databases**, luego de ver que esta seleccionada da clic en 
 Luego en la ventana aparece el recurso que desea agregar, deberá buscar la opción **Databases for MongoDB**,
 seleccionará esta opción y da clic en **Next**.
 
-<img width="600" alt="21" src="https://user-images.githubusercontent.com/50923637/59303797-99662980-8c5c-11e9-9e28-5d4bc97c6cd3.jpg">
+<img width="600" alt="21" src="https://user-images.githubusercontent.com/50923637/59304238-712afa80-8c5d-11e9-9bca-351f14ef97c5.jpg">
 
 Después de eso se realiza el despliegue, en la ventana las opciones deben seleccionar la región, está ya seleccionado
 el resource group o grupo de recursos anteriormente asignado luego de eso deberá dar clic en la opción **Create**
@@ -144,7 +144,7 @@ o **Crear**.
 debe contar con permisos o debe ser una cuenta paga es decir con recursos para poder realizar
 esta acción de provisionar recursos.`
 
-<img width="600" alt="22" src="https://user-images.githubusercontent.com/50923637/59303806-9cf9b080-8c5c-11e9-9cf7-99d7d2c88af6.jpg">
+<img width="600" alt="22" src="https://user-images.githubusercontent.com/50923637/59304240-72f4be00-8c5d-11e9-9ba8-fdec5691191d.jpg">
 
 Luego este proceso durara un par de minutos, para poder hacer que el recurso quede provisionado en la aplicación.
 
