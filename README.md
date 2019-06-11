@@ -164,7 +164,7 @@ En la ventana que se genera se debe ir hasta la parte de abajo hasta el punto do
 <img width="600" alt="23" src="https://user-images.githubusercontent.com/50923637/59036620-48f26480-8835-11e9-8ea7-fa13e4ac1881.png">
 
 Luego se selecciona el recurso creado anteriormente se puede reconocer porque tiene el **nombre de la aplicación**,
-tiene una descripción donde dice el servicio adquirido en este caso **Compose for MongoDB**, luego
+tiene una descripción donde dice el servicio adquirido en este caso **Databases for MongoDB**, luego
 de reconocer que es el correspondiente a la aplicación que se creó, da clic verificando que quede seleccionado y
 luego clic en **Next**.
 
@@ -172,7 +172,7 @@ luego clic en **Next**.
 
 Luego de eso ya podrá ver que el recurso ya esta desplegado y activo en la aplicación.
 
-<img width="600" alt="25" src="https://user-images.githubusercontent.com/50923637/59036628-4bed5500-8835-11e9-80da-031d37931fc8.png">
+<img width="600" alt="25" src="https://user-images.githubusercontent.com/50923637/59304676-573de780-8c5e-11e9-9a98-dfbf428bdac5.jpg">
 
 `Nota: La credencial se crea automáticamente y la podrá ver en la siguiente imagen, se debe tener
 en cuenta que al realizarlo fuera de la aplicación no se crean las credenciales de forma automática.`
