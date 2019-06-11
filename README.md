@@ -133,7 +133,7 @@ clic en la opción **Databases**, luego de ver que esta seleccionada da clic en 
 Luego en la ventana aparece el recurso que desea agregar, deberá buscar la opción **Databases for MongoDB**,
 seleccionará esta opción y da clic en **Next**.
 
-<img width="600" alt="21" src=" https://user-images.githubusercontent.com/50923637/59303797-99662980-8c5c-11e9-9e28-5d4bc97c6cd3.jpg ">
+<img width="600" alt="21" src="https://user-images.githubusercontent.com/50923637/59303797-99662980-8c5c-11e9-9e28-5d4bc97c6cd3.jpg">
 
 Después de eso se realiza el despliegue, en la ventana las opciones deben seleccionar la región, está ya seleccionado
 el resource group o grupo de recursos anteriormente asignado luego de eso deberá dar clic en la opción **Create**
