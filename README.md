@@ -185,15 +185,9 @@ recurso implementado, luego seleccionará la opción **Open dashboard**.
 
 <img width="600" alt="27" src="https://user-images.githubusercontent.com/50923637/59357002-a5e79200-8cef-11e9-9bf2-7f06deb06633.jpg">
 
-Estando en la sección de **Manage** o **Gestionar**,se debe buscar la dirección HTTP de la aplicación que fue
-creada, para tener los datos de password, usuario, dirección de la base de datos para establecer la comunicación
-de la aplicación de Node.js y la base de datos.
+Estando en el dashboard de la aplicación se accede al area de **Connections** para buscar la conexión que desea activar o crear, por lo cual usted debe dar clic en **Create Connection** para que permita el funcionamiento correcto de su aplicación.
 
-En la siguiente imagen podrá ver en el campo de color azul va el nombre usuario asignado,en color amarillo el
-Password o contraseña de usuario asignado y finalmente vera en color verde la dirección IP correspondiente a
-la base de datos.
-
-<img width="600" alt="29" src="https://user-images.githubusercontent.com/50923637/59036940-dafa6d00-8835-11e9-972f-d91a376f0e85.png">
+<img width="600" alt="29" src="https://user-images.githubusercontent.com/50923637/59366809-8147e600-8d00-11e9-8b03-065b9f5a1d68.jpg">
 
 Luego se debe dirigir a la **lista de recursos** o **resource list** para poder acceder a la aplicación que creo, esto
 por medio del despliegue del **menú de hamburguesa**.
