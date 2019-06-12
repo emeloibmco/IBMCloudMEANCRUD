@@ -168,8 +168,6 @@ tiene una descripción donde dice el servicio adquirido en este caso **Databases
 de reconocer que es el correspondiente a la aplicación que se creó, da clic verificando que quede seleccionado y
 luego clic en **Next**.
 
-<img width="600" alt="24" src="https://user-images.githubusercontent.com/50923637/59036624-4a239180-8835-11e9-9c6f-926a0927ff95.png">
-
 Luego de eso ya podrá ver que el recurso ya esta desplegado y activo en la aplicación.
 
 <img width="600" alt="25" src="https://user-images.githubusercontent.com/50923637/59304676-573de780-8c5e-11e9-9a98-dfbf428bdac5.jpg">
@@ -178,7 +176,7 @@ Luego de eso ya podrá ver que el recurso ya esta desplegado y activo en la apli
 en cuenta que al realizarlo fuera de la aplicación no se crean las credenciales de forma automática.`
 
 
-<img width="600" alt="26" src="https://user-images.githubusercontent.com/50923637/59036927-d766e600-8835-11e9-9420-26d22071002a.png">
+<img width="600" alt="26" src="https://user-images.githubusercontent.com/50923637/59355521-bb0ef180-8cec-11e9-86c5-a8aa78b08c7d.jpg">
 
 ## Creación base de datos
 
@@ -210,7 +208,7 @@ por medio del despliegue del **menú de hamburguesa**.
 Ya estando en la lista de recursos seleccione su aplicación y de clic en ella para poder acceder a la información
 de su aplicación.
 
-<img width="600" alt="31" src="https://user-images.githubusercontent.com/50923637/59038480-b6ec5b00-8838-11e9-83c3-70d8d6a57731.png">
+<img width="600" alt="31" src="https://user-images.githubusercontent.com/50923637/59355085-feb52b80-8ceb-11e9-8dba-53dbe09fdf24.jpg">
 
 Luego estando en su aplicación selecciona tiempos de ejecución y en tiempos de ejecución selecciona la opción
 variable de entorno.
