@@ -208,12 +208,12 @@ Luego cuand oacceda a su aplicación podra ver en **Overview** en la sección de
 Luego debe acceder a la lista de recursos, se despliega el menú de apps, selecciona la aplicación creada, luego
 de eso lo envía a la siguiente pantalla donde dará clic en la opción ver cadena de herramientas.
 
-<img width="600" alt="39" src="https://user-images.githubusercontent.com/50923637/59038985-9244b300-8839-11e9-9c4f-d2f0fe7d8652.png">
+<img width="600" alt="39" src="https://user-images.githubusercontent.com/50923637/59368817-a50d2b00-8d04-11e9-9ff0-6943551b0c24.jpg">
 
 En esta sección tendra diferentes herramientas para modificación de la aplicacion en este caso seleccionará la
 opción **IDE web de eclipse Orion**, para modificar su aplicacion por medio de esta interfaz de código.
 
-<img width="600" alt="40" src="https://user-images.githubusercontent.com/50923637/59038989-9375e000-8839-11e9-981c-7c54bf34f700.png">
+<img width="600" alt="40" src="https://user-images.githubusercontent.com/50923637/59368976-059c6800-8d05-11e9-884f-fc0a3aa08746.jpg">
 
 Luego en la siguiente pantalla podra ver cada uno de los componentes de codigo que hacen funcionar la aplicación,
 dentro de la sección se debe dirigir a la opción **client**.
