@@ -189,20 +189,17 @@ Estando en el dashboard de la aplicación se accede al area de **Connections** p
 
 <img width="600" alt="29" src="https://user-images.githubusercontent.com/50923637/59366809-8147e600-8d00-11e9-8b03-065b9f5a1d68.jpg">
 
-Luego se debe dirigir a la **lista de recursos** o **resource list** para poder acceder a la aplicación que creo, esto
-por medio del despliegue del **menú de hamburguesa**.
+Luego se dirige al vinculo con el nombre de su aplicación y da clic en create para establecer la conexión con la base de datos para hacer efectivo el funcionamiento de la misma.
 
-<img width="600" alt="30" src="https://user-images.githubusercontent.com/50923637/59038475-b5229780-8838-11e9-92ed-e29c68cf14b6.png">
+<img width="600" alt="30" src="https://user-images.githubusercontent.com/50923637/59367393-9a9d6200-8d01-11e9-90da-5311c91d85e4.jpg">
 
-Ya estando en la lista de recursos seleccione su aplicación y de clic en ella para poder acceder a la información
-de su aplicación.
+Luego se genera una ventana emergente en la cual ustes puede agregar algun archivo a la conexión para hacerla más compleja, pero en este caso no se realizara de esta manera, por lo cual usted dara clic en **Connect & restage app** para terminar el proceso de la conexión de la base de datos con su aplicación.
 
-<img width="600" alt="31" src="https://user-images.githubusercontent.com/50923637/59355085-feb52b80-8ceb-11e9-8dba-53dbe09fdf24.jpg">
+<img width="600" alt="31" src="https://user-images.githubusercontent.com/50923637/59367693-40e96780-8d02-11e9-9779-a73522b71a9a.jpg">
 
-Luego estando en su aplicación selecciona tiempos de ejecución y en tiempos de ejecución selecciona la opción
-variable de entorno.
+Luego debe acceder a lista de recursos y puede verificar si la aplicación esta correctamente aprovisionada con la base de datos que creo previamente.
 
-<img width="600" alt="32" src="https://user-images.githubusercontent.com/50923637/59038481-b81d8800-8838-11e9-9929-4d21bbcb9ece.png">
+<img width="600" alt="32" src="https://user-images.githubusercontent.com/50923637/59355085-feb52b80-8ceb-11e9-8dba-53dbe09fdf24.jpg">
 
 Luego se debe dar clic en **variables de entorno** donde verá la siguiente pagina de opciones, en la cual luego
 se debe dar clic en **añadir** en los espacios que se generan debe agregar,**MongoDB URL, MongoDB user y
