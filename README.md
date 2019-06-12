@@ -183,12 +183,7 @@ en cuenta que al realizarlo fuera de la aplicación no se crean las credenciales
 Estando en el área de **App details** o **Detalles de la aplicación** deberá dar clic en el menú de despliegue del
 recurso implementado, luego seleccionará la opción **Open dashboard**.
 
-<img width="600" alt="27" src="https://user-images.githubusercontent.com/50923637/59038349-886e8000-8838-11e9-87f5-954f0a028c8c.png">
-
-Luego de esto se abre una ventana emergente la cual lo ubicará por defecto en la opción **Manage** o **Gestionar**
-en la cual usted podrá verificar que el estado de los tasks este completado.
-
-<img width="600" alt="28" src="https://user-images.githubusercontent.com/50923637/59036935-d9c94000-8835-11e9-84b8-b858f32108e2.png">
+<img width="600" alt="27" src="https://user-images.githubusercontent.com/50923637/59357002-a5e79200-8cef-11e9-9bf2-7f06deb06633.jpg">
 
 Estando en la sección de **Manage** o **Gestionar**,se debe buscar la dirección HTTP de la aplicación que fue
 creada, para tener los datos de password, usuario, dirección de la base de datos para establecer la comunicación
