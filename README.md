@@ -201,44 +201,9 @@ Luego debe acceder a lista de recursos y puede verificar si la aplicación esta 
 
 <img width="600" alt="32" src="https://user-images.githubusercontent.com/50923637/59355085-feb52b80-8ceb-11e9-8dba-53dbe09fdf24.jpg">
 
-Luego se debe dar clic en **variables de entorno** donde verá la siguiente pagina de opciones, en la cual luego
-se debe dar clic en **añadir** en los espacios que se generan debe agregar,**MongoDB URL, MongoDB user y
-MongoDB password**.
+Luego cuand oacceda a su aplicación podra ver en **Overview** en la sección de connections podrá ver que su conexión se establecio de manera correcta.
 
-`Nota: Para encontrar el MongoDB URL, password y user podrá ubicarlos en la sección de
-HTTP anteriormente mencionada donde están indicados con colores cual corresponde a la opción
-deseada.`
-
-<img width="600" alt="33" src="https://user-images.githubusercontent.com/50923637/59038486-b94eb500-8838-11e9-8b80-23daf8150e30.png">
-
-En la siguiente imagen podrá ver la forma en que se agregan las opciones que se estaban mencionando anteriormente.
-
-**Nota: se debe tener en cuenta que en el espacio en purpura, por defecto la base de datos lo
-asigna como ADMIN.**
-
-<img width="600" alt="34" src="https://user-images.githubusercontent.com/50923637/59038810-41cd5580-8839-11e9-8943-4405166ca5ce.png">
-
-Luego se debe dar clic en la opción de conexiones ubicado en la parte izquierda de la pantalla.
-
-<img width="600" alt="35" src="https://user-images.githubusercontent.com/50923637/59038811-4265ec00-8839-11e9-9693-bc6255696e1f.png">
-
-Luego se debe dar clic en crear conexión, luego se desplegaran las aplicaciones compatibles con la anteriormente
-creada.
-
-<img width="600" alt="36" src="https://user-images.githubusercontent.com/50923637/59038823-42fe8280-8839-11e9-880d-21711f59b60d.png">
-
-Luego dentro de los servicios compatibles seleccionará el servicio para la aplicación que previamente se creó, se
-da clic en el para seleccionarlo y después de tenerlo seleccionado se da clic en crear.
-
-<img width="600" alt="37" src="https://user-images.githubusercontent.com/50923637/59038826-442faf80-8839-11e9-866e-c9c722e7cf0c.png">
-
-Luego se da clic en la opción volver a transferir, esta opción lo que realiza es el reinicio de la aplicación y los
-servicios para establecer una conexión de todos ellos.
-
-`Nota: debe esperar unos segundos mientras se realiza el proceso e reinicio que se habilito al dar
-clic en volver a transferir.`
-
-<img width="600" alt="38" src="https://user-images.githubusercontent.com/50923637/59038981-907aef80-8839-11e9-9b51-e973f4e64d73.png">
+<img width="600" alt="33" src="https://user-images.githubusercontent.com/50923637/59368181-4a270400-8d03-11e9-91aa-7955eb570c74.jpg">
 
 Luego debe acceder a la lista de recursos, se despliega el menú de apps, selecciona la aplicación creada, luego
 de eso lo envía a la siguiente pantalla donde dará clic en la opción ver cadena de herramientas.
