@@ -413,108 +413,108 @@ de películas en una página Web con la ayuda de las herramientas que proporcion
 
  require (’./ default .css ’);
 
- angular . module (’App ’, [’ui. router ’, ’MainView ’])
+ angular.module (’App ’, [’ui.router ’, ’MainView ’])
  . config ( function ( $stateProvider , $urlRouterProvider ) {
  ’ngInject ’;
- $stateProvider . state (’MainState ’, {
+ $stateProvider.state (’MainState ’, {
  url : ’’,
- templateUrl : ’/ templates / component . html ’,
+ templateUrl : ’/ templates / component.html ’,
  controller : ’MainCtrl ’
  });
- $urlRouterProvider . otherwise (’/’);
+ $urlRouterProvider.otherwise (’/’);
  });
 
- angular . module (’MainView ’, [])
- . controller (’MainCtrl ’, [’$scope ’, ’$http ’, function ($scope , $http ) {
+ angular.module (’MainView ’, [])
+ .controller (’MainCtrl ’, [’$scope ’, ’$http ’, function ($scope , $http ) {
 
- $scope .id = "" ;
- $scope . title = "" ;
- $scope . director = "" ;
- $scope . description = "" ;
- $scope . year = "" ;
+ $scope.id = "" ;
+ $scope.title = "" ;
+ $scope.director = "" ;
+ $scope.description = "" ;
+ $scope.year = "" ;
 
- $scope . data = "" ;
+ $scope.data = "" ;
 
- $scope .add = function () {
+ $scope.add = function () {
 
  $http ({
  method : ’POST ’,
  url : ’/api / movies /’,
  data : {
- ’title ’: $scope .title ,
- ’director ’: $scope . director ,
- ’description ’: $scope . description ,
- ’year ’: $scope . year
+ ’title ’: $scope.title ,
+ ’director ’: $scope.director ,
+ ’description ’: $scope.description ,
+ ’year ’: $scope.year
  }
  })
- . then ( function ( response ) {
- $scope .get () ;
+ .then ( function ( response ) {
+ $scope.get () ;
 
  }, function ( error ) {
- console . error (’get movies failed : %s’, error . message ) ;
+ console.error (’get movies failed : %s’, error.message ) ;
  }) ;
 
  } ;
 
- $scope .get = function () {
+ $scope.get = function () {
 
  $http ({
  method : ’GET ’,
  url : ’/api / movies /’
 
  })
- . then ( function ( response ){
+ .then ( function ( response ){
 
- $scope . movies = response . data ;
- $scope . data = $scope . movies [0]. title ;
+ $scope.movies = response.data ;
+ $scope.data = $scope.movies [0].title ;
 
- console . info (’get movies sussess : %s’, $scope . movies [0]. title ) ;
+ console.info (’get movies sussess : %s’, $scope.movies [0].title ) ;
 
  }, function ( error ) {
 
- $scope . data = error . message ;
- console . info (’get movies failed : %s’, error . message ) ;
+ $scope.data = error.message ;
+ console.info (’get movies failed : %s’, error.message ) ;
  }) ;
  } ;
 
 
- $scope . update = function () {
+ $scope.update = function () {
 
  $http ({
  method : ’PUT ’,
- url : ’/api / movies /’ + $scope .id ,
+ url : ’/api / movies /’ + $scope.id ,
  data : {
- ’_id ’: $scope .id ,
- ’title ’: $scope .title ,
- ’director ’: $scope . director ,
- ’description ’: $scope . description ,
- ’year ’: $scope . year
+ ’_id ’: $scope.id ,
+ ’title ’: $scope.title ,
+ ’director ’: $scope.director ,
+ ’description ’: $scope.description ,
+ ’year ’: $scope.year
  }
  })
- . then ( function ( response ) {
- $scope .get () ;
+ .then ( function ( response ) {
+ $scope.get () ;
 
  }, function ( error ) {
- console . error (’update movies failed : %s’, error . message ) ;
+ console.error (’update movies failed : %s’, error.message ) ;
  }) ;
  } ;
 
 
 
- $scope . delete = function () {
+ $scope.delete = function () {
 
  $http ({
  method : ’DELETE ’,
- url : ’/api / movies /’+ $scope .id ,
+ url : ’/api / movies /’+ $scope.id ,
  data : {
- ’_id ’: $scope .id ,
+ ’_id ’: $scope.id ,
  }
  })
- . then ( function ( response ) {
- $scope .get () ;
+ .then ( function ( response ) {
+ $scope.get () ;
 
  }, function ( error ) {
- console . error (’delete movies failed : %s’, error . message ) ;
+ console.error (’delete movies failed : %s’, error.message ) ;
  }) ;
  } ;
  }]) ;
@@ -574,13 +574,13 @@ module.exports = model ;
  // serviceName :’ frontend ’
  // });
 
- require (’appmetrics - dash ’). attach ();
- require (’appmetrics - prometheus ’). attach ();
- const appName = require (’./../ package ’). name ;
+ require (’appmetrics - dash ’).attach ();
+ require (’appmetrics - prometheus ’).attach ();
+ const appName = require (’./../ package ’).name ;
  const http = require (’http ’);
  const express = require (’express ’);
  const log4js = require (’log4js ’);
- const localConfig = require (’./ config / local . json ’);
+ const localConfig = require (’./ config / local.json ’);
  const path = require (’path ’);
 
  // inicio
@@ -588,21 +588,21 @@ module.exports = model ;
  var Movie = require (’./ model / movies ’) ;
 
 
- const logger = log4js . getLogger ( appName );
- logger . level = process .env . LOG_LEVEL || ’info ’
+ const logger = log4js.getLogger ( appName );
+ logger.level = process.env.LOG_LEVEL || ’info ’
  const app = express ();
- const server = http . createServer (app );
+ const server = http.createServer (app );
 
- app .use ( log4js . connectLogger (logger , { level : logger . level }));
+ app.use( log4js.connectLogger (logger , { level : logger.level }));
  const serviceManager = require (’./ services / service - manager ’);
  require (’./ services / index ’)( app );
  require (’./ routers / index ’)(app , server );
 
  // Movies APIs
 
- app .get ("/api / movies ", function (req , res , next ) {
+ app.get ("/api / movies ", function (req , res , next ) {
 
- Movie . find ( function (err , post ) {
+ Movie.find ( function (err , post ) {
  if (err ) return next (err );
  res . json ( post );
  });
@@ -610,58 +610,58 @@ module.exports = model ;
  });
 
 
- app .get ("/api / movies /: id", function (req , res , next ) {
+ app.get ("/api / movies /: id", function (req , res , next ) {
 
- Movie . findById (req . params .id , function (err , post ) {
+ Movie.findById (req.params.id , function (err , post ) {
  if (err ) return next (err );
- res . json ( post );
+ res.json ( post );
  });
 
  });
 
- app . post ("/api / movies ", function (req , res , next ) {
+ app.post ("/api / movies ", function (req , res , next ) {
 
- Movie . create (req .body , function (err , post ) {
+ Movie.create (req .body , function (err , post ) {
 
  if (err ) return next (err );
- res . json ( post );
+ res.json ( post );
  });
 
  });
 
  // update Movie
- app .put ("/api / movies /: id", function (req , res , next ) {
- Movie . findByIdAndUpdate (req . params .id , req .body , function (err , post ) {
+ app.put ("/api / movies /: id", function (req , res , next ) {
+ Movie.findByIdAndUpdate (req.params.id , req.body , function (err , post ) {
  if (err ) return next (err );
- res . json ( post );
+ res.json ( post );
  });
  });
 
  // DELETE Movie
 
- app . delete ("/api / movies /: id", function (req , res , next ) {
- Movie . findByIdAndRemove (req . params .id , function (err , post ) {
+ app.delete ("/api / movies /: id", function (req , res , next ) {
+ Movie.findByIdAndRemove (req.params.id , function (err , post ) {
  if (err ) return next (err );
- res . json ( post );
+ res.json ( post );
  });
  });
 
  // final
 
- const port = process .env . PORT || localConfig . port ;
- server . listen (port , function (){
- logger . info (‘ DEMOPELICULAS listening on http :// localhost :${ port }/ appmetrics -dash ‘);
- logger . info (‘ DEMOPELICULAS listening on http :// localhost :${ port }‘);
+ const port = process.env.PORT || localConfig.port ;
+ server.listen (port , function (){
+ logger.info (‘ DEMOPELICULAS listening on http :// localhost :${ port }/ appmetrics -dash ‘);
+ logger.info (‘ DEMOPELICULAS listening on http :// localhost :${ port }‘);
  });
 
- app .use ( function (req , res , next ) {
- res . sendFile ( path . join ( __dirname , ’../ public ’, ’404. html ’));
+ app.use ( function (req , res , next ) {
+ res.sendFile ( path.join ( __dirname , ’../ public ’, ’404.html ’));
  });
 
- app .use ( function (err , req , res , next ) {
- res . sendFile ( path . join ( __dirname , ’../ public ’, ’500. html ’));
+ app.use ( function (err , req , res , next ) {
+ res.sendFile ( path.join ( __dirname , ’../ public ’, ’500.html ’));
  });
 
- module . exports = server ;
+ module.exports = server ;
 ```
 
